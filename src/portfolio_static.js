@@ -267,7 +267,7 @@ const portfolio = {
   },
   // Home : Contain Information Regarding Home Page, all the static reside here, modification here will reflect on the website
   home: {
-    showModel: false,
+    showModel: true,
     helmet: {
       title: "Eduardo Trevino - Welcome to Eddie's Dev-folio",
     },
