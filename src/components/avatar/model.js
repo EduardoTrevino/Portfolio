@@ -8,12 +8,18 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 export default function Model(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF("/model.glb");
+  
   const { actions } = useAnimations(animations, group);
+  useEffect(() => {
+    console.log('Available animation clips:', animations);
+    console.log('Available actions:', actions);
+    console.log('Action keys:', Object.keys(actions));
+  }, [animations, actions]);
   useEffect(() => {
   materials.castShadow = true;
   materials.receiveShadow = true;
   if (materials?.material?.map) materials.material.map.anisotropy = 16;
-  actions["wave.001"]?.play();
+  actions["Armature|mixamo.com|Layer0"]?.play();
   }, []);
 
   return (
